@@ -61,4 +61,4 @@ const result = await overallChain.call({
 
 console.log({ result });
 
-//! Now how about we want to pass object as input? for example from databases. 04 will explain that.
+//! Now how about we want to pass & retrieve object? for example from databases. 04 will explain that.
