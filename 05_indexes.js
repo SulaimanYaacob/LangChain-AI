@@ -17,7 +17,7 @@ const document = await splitter.splitDocuments(docs);
 
 const embeddings = new OpenAIEmbeddings();
 
-const vectorstore = await FaissStore.fromDocuments(document, embeddings); // Store vectors in memory
-await vectorstore.save("./"); // Save vectors to disk (local)
+const vectorStore = await FaissStore.fromDocuments(document, embeddings); // Store vectors in memory
+await vectorStore.save("./"); // Save vectors to disk (local)
 
-//! How do we use the stored vectors? (See 06_search.js)
+//! How do we use the stored vectors? (See 06_usestore.js)
