@@ -5,13 +5,18 @@ import { PromptTemplate } from "langchain";
 config();
 
 const model = new OpenAI({ temperature: 0 });
-const template = `Be funny and stupid when answering questions\n Questions: {question}`;
+const template = `Be funny when answering questions\n Questions: {question}`;
+
 const prompt = new PromptTemplate({ template, inputVariables: ["question"] });
 
-const chain = new LLMChain({ llm: model, prompt });
+//* Alternative way to create PromptTemplate without stating inputVariables
+const altPrompt = PromptTemplate.fromTemplate(template); // same as above
+console.log(altPrompt.inputVariables);
 
-const result = await chain.call({
-  question: "What is the capital city of malaysia",
-});
+// const chain = new LLMChain({ llm: model, prompt });
 
-console.log({ result });
+// const result = await chain.call({
+//   question: "What is the capital city of malaysia",
+// });
+
+// console.log({ result });
